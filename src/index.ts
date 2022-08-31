@@ -39,6 +39,7 @@ export default (options: ViteGitRevisionPlugin): Plugin => {
       name: 'vite:git-revision',
       config(config:any) {
           config.define.VERSION = JSON.stringify(runGitCommand(options.gitWorkTree,options.versionCommand))
+          config.define.BRANCH = JSON.stringify(runGitCommand(options.gitWorkTree,options.branchCommand))
       }
     };
   };
